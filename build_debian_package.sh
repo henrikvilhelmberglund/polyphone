@@ -1,6 +1,7 @@
 #!/bin/bash
+set -e
 
-# To build the package, first copy this file and the directory "debian" next to the sources:
+# For building a DEB package, first copy this file and the directory "debian" next to the sources:
 # root directory
 # |- debian
 # |  |- changelog
