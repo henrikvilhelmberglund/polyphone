@@ -6,7 +6,7 @@ License:        GPLv3+n
 URL:            https://www.polyphone-soundfonts.com
 Group:          Applications/Multimedia
 BuildRequires:  alsa-lib-devel portaudio-devel zlib-devel libogg-devel flac-devel libvorbis-devel glib2-devel openssl-devel rtmidi-devel stk-devel qcustomplot-qt5-devel
-Requires:       alsa-utils jack-audio-connection-kit portaudio zlib libogg flac libvorbis glib2 openssl rtmidi stk
+Requires:       alsa-utils portaudio zlib libogg flac libvorbis glib2 openssl rtmidi stk
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Packager:       Davy Triponney
 
