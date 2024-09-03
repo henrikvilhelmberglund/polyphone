@@ -16,7 +16,7 @@ set -e
 #  * the filesystem allow the execution flags to be removed (no NTFS)
 #
 # Finally, run this script by opening a terminal in the root directory
-# For version 2.1 write "build-debian-package 2.1"
+# For version 2.1 write "build_debian_package 2.1"
 
 if [ -z "$1" ]
 then
