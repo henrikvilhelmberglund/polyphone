@@ -1,17 +1,17 @@
 Name:           polyphone
-Version:        2.3.1
+Version:        2.4.0
 Release:        1%{?dist}
 Summary:        Soundfont editor
 License:        GPLv3+n
-URL:            https://www.polyphone-soundfonts.com
+URL:            https://www.polyphone.io
 Group:          Applications/Multimedia
-BuildRequires:  alsa-lib-devel portaudio-devel zlib-devel libogg-devel flac-devel libvorbis-devel glib2-devel openssl-devel rtmidi-devel stk-devel qcustomplot-qt5-devel
-Requires:       alsa-utils portaudio zlib libogg flac libvorbis glib2 openssl rtmidi stk
+BuildRequires:  alsa-lib-devel rtaudio-devel zlib-devel libogg-devel flac-devel libvorbis-devel glib2-devel openssl-devel rtmidi-devel stk-devel qt6-base-devel
+Requires:       alsa-utils rtaudio zlib libogg flac libvorbis glib2 openssl rtmidi stk
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 Packager:       Davy Triponney
 
 %description
-Polyphone is a free software for editing soundfonts.
+Turn any sound into a playable instrument with the help of SoundFonts.
 These files contain a multitude of audio samples put together and
 configured so as to form musical instruments that can be used by
 synthesizers such as fluidsynth and played using a MIDI keyboard.
@@ -22,16 +22,16 @@ available on Linux, Windows and Mac OS X,
 making it possible to handle a large amount of data.
  
 Main features:
- - import from sf2, sfz, sfArk, sf3,
+ - import from sf2, sfz, sfArk, sf3, grandOrgue
  - export as sf2, sfz, sf3,
  - support of sf2 format v2.01 and v2.04 (with 24-bit samples),
- - support for jack and asio audio servers,
+ - support for jack and ASIO audio servers,
  - simultaneous editing of parameters,
  - specific tools for musical instrument creation,
  - automatic detection of the sample pitch and correction,
  - automatic loop of samples,
  - a recorder, for the record of what is played in a .wav file,
- - built-in synthesizer, using a virtual keyboard or midi signals,
+ - built-in synthesizer, using a virtual keyboard or MIDI signals,
  - user manual, forum and online soundfont repository,
  - available in several languages.
 
@@ -54,7 +54,7 @@ install -p -m 755 polyphone %{buildroot}%{_bindir}
 install -p -m 644 polyphone.png %{buildroot}%{_datadir}/icons
 install -p -m 644 ../sources/contrib/polyphone.xml %{buildroot}%{_datadir}/mime/packages/polyphone.xml
 install -p -m 644 ../sources/changelog %{buildroot}%{_docdir}/%{name}
-desktop-file-install --vendor="" --dir=%{buildroot}%{_datadir}/applications/ ../sources/contrib/com.polyphone_soundfonts.polyphone.desktop
+desktop-file-install --vendor="" --dir=%{buildroot}%{_datadir}/applications/ ../sources/contrib/io.polyphone.polyphone.desktop
 
 %post
 # icons
@@ -83,6 +83,6 @@ update-desktop-database &> /dev/null || :
 %doc ../sources/contrib/man/fr/man1/polyphone.1
 %{_bindir}/%{name}
 %{_docdir}/%{name}
-%{_datadir}/applications/com.polyphone_soundfonts.polyphone.desktop
+%{_datadir}/applications/io.polyphone.polyphone.desktop
 %{_datadir}/icons/polyphone.png
 %{_datadir}/mime/packages/polyphone.xml
